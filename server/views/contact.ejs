@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="assets/styles.css" type="text/css">
+    </head>
+    <body>
+        <% include partials/nav.ejs %>
+        <h1>I coded this cool website</h1>
+        <p>
+            This is the Contact Page
+        </p>
+        <p>
+            <%= qs.name %>
+        </p>
+        <p>
+            <%= qs.job %>
+        </p>
+
+        <form id="contactForm" method="post" action="/contact">
+            <label for="who">Who do you want to meet?</label>
+            <input type="text" name="who" value="<%= qs.name %>">
+
+            <label for="job">Which job do they do?</label>
+            <input type="text" name="job" value="<%= qs.job %>">
+
+            <label for="email">Your email</label>
+            <input type="email" name="email">
+
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
